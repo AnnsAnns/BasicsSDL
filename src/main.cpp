@@ -5,7 +5,7 @@
 #include "RenderWindow.hpp"
 
 int main(int argsc, char* args[]) {
-    if (SDL_Init(SDL_INIT_VIDEO) < 0 ) {
+    if (SDL_Init(SDL_INIT_EVERYTHING) < 0 ) {
         printf("Oopsie Woopsie %s\n", SDL_GetError());
     }
     if (!(IMG_Init(IMG_INIT_PNG))) {
