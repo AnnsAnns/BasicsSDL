@@ -13,6 +13,7 @@ class Entity {
         }
         SDL_Texture* getTex();
         SDL_Rect getCurrentFrame();
+        void setCurrentFrame(SDL_Rect *p_rect);
     private:
         Vector2f pos;
         SDL_Rect currentFrame;
