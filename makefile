@@ -2,7 +2,8 @@
 OBJS = src/*.cpp
 
 #CC specifies which compiler we're using
-CC = g++
+CC_LINUX = g++
+CC_WIN = x86_64-w64-mingw32-g++
 
 #COMPILER_FLAGS specifies the additional compilation options we're using
 # -w suppresses all warnings
@@ -15,5 +16,8 @@ LINKER_FLAGS = -lSDL2 -lSDL2_image -I include
 OBJ_NAME = main_exec
 
 #This is the target that compiles our executable
-all : $(OBJS)
-	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
+linux : $(OBJS)
+	$(CC_LINUX) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
+
+win: $(OBJS)
+	$(CC_WIN) $(OBJS) $(COMPILER_FLAGS) --static $(LINKER_FLAGS) -o $(OBJ_NAME).exe
