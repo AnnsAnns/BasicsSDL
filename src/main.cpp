@@ -6,10 +6,10 @@
 
 int main(int argsc, char* args[]) {
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0 ) {
-        printf("Oopsie Woopsie %s\n", SDL_GetError());
+        printf("SDL failed to init: %s\n", SDL_GetError());
     }
     if (!(IMG_Init(IMG_INIT_PNG))) {
-        printf("Fucky Fucky, Img_Init: %s\n", SDL_GetError());
+        printf("Img_Init failed to init: %s\n", SDL_GetError());
     }
 
     RenderWindow window("Game v1.0", 1280, 720);
